@@ -26,17 +26,11 @@ public class BJ_2178 {
         //시작점은 0,0    //도착점은 N,M
         visited[0][0] = true;
         q.offer(new int[] {0,0});
-        int dist = 0; //거리 체크
 
         while(!q.isEmpty()){
             int[] now = q.poll();
             int x = now[0];
             int y = now[1];
-
-            if(x==N-1 && y==M-1){
-                System.out.println(dist-1);
-                break;
-            }
 
             for(int d=0; d<4; d++){
                 int nx = x + dx[d];
@@ -48,8 +42,9 @@ public class BJ_2178 {
                 visited[nx][ny] = true;
                 q.offer(new int[] {nx,ny});
                 Map[nx][ny] += Map[x][y];
-                dist = Map[nx][ny];
+            
             }
         }
+        System.out.println(Map[N-1][M-1]);
     }
 }
