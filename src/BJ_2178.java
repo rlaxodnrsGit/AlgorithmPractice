@@ -47,7 +47,8 @@ public class BJ_2178 {
 
                 visited[nx][ny] = true;
                 q.offer(new int[] {nx,ny});
-                dist++;
+                Map[nx][ny] += Map[x][y];
+                dist = Map[nx][ny];
             }
         }
     }
