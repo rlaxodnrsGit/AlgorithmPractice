@@ -22,6 +22,7 @@ public class BJ_15649 {
             for(int i=0; i<M; i++){
                 sb.append(arr[i]).append(" ");
             }
+            
             sb.append("\n");
             return;
         }
